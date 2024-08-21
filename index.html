@@ -3,41 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic PDF Viewer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #pdf-frame {
-            width: 100%;
-            height: 80vh;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <title>PDF Preview</title>
 </head>
 <body>
-    <h1>Dynamic PDF Viewer</h1>
-    <p>Viewing PDF: <span id="pdf-name"></span></p>
-    <iframe id="pdf-frame" src="" frameborder="0"></iframe>
-
-    <script>
-        // Function to get query parameters from the URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        // Get the PDF URL from the query parameter
-        const pdfUrl = getQueryParam('pdf');
-
-        if (pdfUrl) {
-            // Set the src of the iframe to the PDF URL
-            document.getElementById('pdf-frame').src = pdfUrl;
-            document.getElementById('pdf-name').textContent = pdfUrl;
-        } else {
-            document.getElementById('pdf-frame').innerHTML = 'No PDF URL provided in the query string.';
-        }
-    </script>
+    <h1>PDF Preview</h1>
+    
+    <!-- Embed the external PDF -->
+    <iframe src="https://docs.google.com/gview?url=https://www.talysis.ie/grams/canned_fish&meats_1bay_x_2shelf_spar_cluster2.pdf&embedded=true" width="100%" height="800px">
+        This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="https://www.talysis.ie/grams/canned_fish&meats_1bay_x_2shelf_spar_cluster2.pdf">Download PDF</a>.
+    </iframe>
 </body>
 </html>
